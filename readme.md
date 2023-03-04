@@ -1,51 +1,5 @@
-# このフレームワークの使い方
+##使い方
 このフレームワーク(vhf)は，アプリケーション開発者が実装したソースコードを自動で解析して修正するWebアプリケーションフレームワークです．
-
-このマークダウンに記述されていることは以下です．
-- vhfをダウンロードする
-- ローカル上でアプリケーションを実行する
-- アプリケーション開発者が実装したソースコードを修正する
-
-## ソースコードをダウンロードする
-ソースコードをgitlabから手元のPCにダウンロードします。
-gitを利用するので，インストールしていない人はgitをインストールしてください．
-
-ソースコードがあるリポジトリには，ソースコード以外のものも入っているのでソースコードだけをPCにダウンロードします。
-
-下をターミナルで実行してください。（下のコマンドはmacとlinuxを前提としているので，windowsのPCを使っている人は適宜読み替えてください）
-
-```sh:ソースコードのクローン
-# 空ディレクトリを作る
-mkdir vhf_dir
-
-# 作ったディレクトリに移動する
-cd vhf_dir
-
-# 空リポジトリを作って初期化
-git init
-
-# 一部だけを取得できるようにsparsecheckoutを設定する．
-git config core.sparsecheckout true
-cat .git/config
-
-# 下のように出力されていたらOK
-# [core]
-#       ...
-#       ...
-#       sparsecheckout = true
-
-# 取得元のリポジトリを設定する
-git remote add origin https://gitlab.koidelab.net/kubota/study.git
-
-# 取得したいディレクトリをsparse-sparsecheckoutに設定する
-echo vhf > .git/info/sparse-checkout
-
-# pullする
-git pull origin master
-
-# ダウンロードできているか確認する
-ls
-```
 
 ## vhfでwebアプリケーションを作って，ローカルで実行する
 webアプリケーションをvhfで作成してローカルで実行します．
